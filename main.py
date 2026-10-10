@@ -94,3 +94,40 @@ for category, amount in categories.items():
     print(category, ":", round(amount, 2))
 
 print("\nExpenses saved to", FILE_NAME)
+for category, amount in categories.items():
+    print(category, ":", round(amount, 2))
+
+print("\nExpenses saved to", FILE_NAME)
+
+if categories:
+    highest_category = max(categories, key=categories.get)
+
+    print("\nHIGHEST SPENDING CATEGORY")
+    print("------------------------")
+    print("Category:", highest_category)
+    print("Amount:", round(categories[highest_category], 2))
+else:
+    print("No expenses recorded yet.")
+print("\nBUDGET ANALYSIS")
+print("------------------------")
+
+try:
+    budget = float(input("Enter your budget: "))
+
+    if budget < 0:
+        print("Budget cannot be negative.")
+    else:
+        print("Your budget:", round(budget, 2))
+        print("Total expenses:", round(total, 2))
+
+        remaining = budget - total
+
+        if remaining > 0:
+            print("Remaining budget:", round(remaining, 2))
+        elif remaining == 0:
+            print("You have used your entire budget.")
+        else:
+            print("You exceeded your budget by:", round(abs(remaining), 2))
+
+except ValueError:
+    print("Please enter a valid number for your budget.")

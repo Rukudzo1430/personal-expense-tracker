@@ -1,2 +1,4 @@
 name,amount,category
 Transport,5.0,Bills
+Food,45.0,Transport
+FOOD,67.0,Other
